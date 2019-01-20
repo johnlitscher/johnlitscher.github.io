@@ -1,0 +1,82 @@
+<html>
+
+<head>
+  <style>
+	h2 {
+	  text-align:center;
+	}
+	
+	body {
+		background-color:lightgray;
+	}
+
+	ul li {
+		cursor:text;
+		position:relative;
+		padding:8px;
+		background-color:lightblue;
+		transition:.2s;
+		font-size:14;
+		color:black;
+	}
+
+	/* make a darker color when hover */
+	ul li:hover {
+		background-color:maroon;
+	}
+
+	input {
+		width:90%;
+		height:20px;
+	}
+
+	ul li.checked{
+		background-color:gray;
+		text-decoration:line-through;
+	}
+
+	.close {
+		padding:10px;
+		color:white;
+	}
+
+	.addButton {
+		color:gray;
+		font-size:14;
+		float:left;
+		cursor:pointer;
+		width:20%;
+	}
+
+	
+  </style>
+
+</head>
+
+<body>
+  <div id=“myDiv” class=“header”>
+	<h2>GROCERY LIST</h2>
+	<p>Type below to add an item to your grocery list</p>
+	<input type=“text” id=“myInput” placeHolder=Title…></input>
+	<button onclick=“addElement()”>Add</button>
+  </div>
+
+  <p>Current items:</p>
+
+  <ul id=“myList”>
+	<li>Eggs</li>
+	<li>Milk</li>
+  </ul>
+
+  <script>
+	function addElement() {
+		var item = document.createElement(“LI”);
+		var node = document.createTextNode(“Water”);
+		item.appendChild(node);
+		document.getElementById(“myList”).appendChild(item);
+	}
+
+  </script> 
+
+</body>
+</html>
